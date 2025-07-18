@@ -11,8 +11,11 @@ jQuery(function () {
   });
   jQuery(".header__nav-link").each(function () {
     $(this).on("click", function () {
-      jQuery("#js-drawer").hide();
-      jQuery("#js-button-drawer").removeClass("is-checked");
+      if (jQuery(window).width() >= 768) {
+        jQuery("#js-drawer").css("display", "block");
+      } else {
+        jQuery("#js-drawer").hide();
+      }
     });
   });
 });
